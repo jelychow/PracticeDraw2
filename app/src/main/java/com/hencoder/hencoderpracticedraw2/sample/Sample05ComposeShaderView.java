@@ -32,7 +32,6 @@ public class Sample05ComposeShaderView extends View {
 
     {
         setLayerType(LAYER_TYPE_SOFTWARE, null);
-
         Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
         Shader shader1 = new BitmapShader(bitmap1, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.batman_logo);
