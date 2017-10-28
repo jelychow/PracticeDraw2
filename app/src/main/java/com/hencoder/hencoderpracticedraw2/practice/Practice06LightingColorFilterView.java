@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -29,6 +31,9 @@ public class Practice06LightingColorFilterView extends View {
 
     {
         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.batman);
+
+
+//        filter.
     }
 
     @Override
@@ -36,9 +41,12 @@ public class Practice06LightingColorFilterView extends View {
         super.onDraw(canvas);
 
         // 使用 Paint.setColorFilter() 来设置 LightingColorFilter
-
+        ColorFilter filter = new LightingColorFilter(0X0f00ffff,0X0f000000);
+        ColorFilter filter2 = new LightingColorFilter(0X0f00ffff,0X0f003000);
         // 第一个 LightingColorFilter：去掉红色部分
+        paint.setColorFilter(filter);
         canvas.drawBitmap(bitmap, 0, 0, paint);
+        paint.setColorFilter(filter2);
 
         // 第二个 LightingColorFilter：增强绿色部分
         canvas.drawBitmap(bitmap, bitmap.getWidth() + 100, 0, paint);
